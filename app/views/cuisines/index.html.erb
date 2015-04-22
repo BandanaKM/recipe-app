@@ -1,0 +1,38 @@
+<h1>Cuisines#index</h1>
+
+<!doctype html>
+
+<div>
+  <ul>
+    <% if current_user %>
+      Signed in as <strong> <%= current_user.name %></strong>
+  </ul>
+  <ul>
+    <li><%= link_to "Logout", '/logout' %></a></li>
+  </ul>
+    <% else %>
+  <ul>
+    <li><%= link_to "Login", '/login' %></a></li>
+    <li><%= link_to "Signup", '/signup' %></a></li>
+  <% end %>
+    </ul>
+  </div>
+     
+
+<div class="header">
+  <div class="container">
+    <h1> Cuisines </h1>
+  </div>
+<div> 
+
+<div class="cuisines">
+  <div class="container">
+  	<% @cuisines.each do |cuisine|%> 
+    <%= image_tag cuisine.image %>
+    <h2> <%= cuisine.region %></h2> 
+    <p></p>
+    </div> 
+    <% end %> 
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<h1>Recipes#edit</h1>
+
+<div class="header">
+  <div class="container">
+    <h1></h1>
+  </div>
+</div>
+
+<div class="destination">
+  <div class="container">
+    <%= image_tag @recipe.image %>
+
+    <%= form_for(@recipe) do |f| %>
+      <%= f.text_field :name %>
+      <%= f.text_area :ingredients %>
+      <%= f.text_area :instructions %>
+      <%= f.submit "Update", :class => "btn" %>
+    <% end %> 
+    
+  </div>
+</div> 
+
