@@ -1,10 +1,11 @@
 class RecipesController < ApplicationController
 
-before_action :require_user, only: [:show, :edit :update]
+before_action :require_user
 
-before_action :require_creator, only: [:new, :create]
+before_action :require_editor, only: [:edit, :update]
 
-before_action :require_admin, only: [:edit, :update]
+before_action :require_admin, only: [:destroy]
+
 
   def show
   	@recipe = Recipe.find(params[:id])
@@ -22,6 +23,11 @@ before_action :require_admin, only: [:edit, :update]
         render 'edit'
       end
   end
+
+  def destroy
+    @recipe = Recipe.fine(params[:id])
+    @recipe.destroy
+  end 
 
   private
     def recipe_params

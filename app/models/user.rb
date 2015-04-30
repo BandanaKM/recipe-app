@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def creator?
-    self.role == 'creator'
+  def editor?
+    self.role == 'editor'
   end
+
+  def admin?
+  	self.role == 'admin'
+  end 
 
 end

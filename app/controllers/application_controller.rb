@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
      redirect_to '/login' unless current_user
    end 
  
-   def require_creator
-     redirect_to '/' unless current_user.creator?
+   def require_editor
+     redirect_to '/' unless current_user.editor?
    end 
 
    def require_admin

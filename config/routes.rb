@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
 
-  resources :cuisines 
+  get 'cuisines' => 'cuisines#index'
+  get '/cuisines/:id' => 'cuisines#show', as: :cuisine
+  get '/recipes/:id' => 'recipes#show', as: :recipe
 
-  resources :recipes
+  get '/recipes/:id/edit' => 'recipes#edit', as: :edit_recipe
+  patch '/recipes/:id' => 'recipes#update'
 
       
   get '/signup' => 'users#new'

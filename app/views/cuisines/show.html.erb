@@ -19,6 +19,8 @@
     <h2> <%= recipe.name %></p> 
     <p> <%= recipe.ingredients %></p> 
     <p> <%= recipe.instructions %></p> 
+    <p> <%= link_to "See Recipe", recipe_path(recipe) %></p>
+
     </div>    
     <% end %> 
   </div>

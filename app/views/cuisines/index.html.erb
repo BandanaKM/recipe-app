@@ -30,7 +30,7 @@
   	<% @cuisines.each do |cuisine|%> 
     <%= image_tag cuisine.image %>
     <h2> <%= cuisine.region %></h2> 
-    <p></p>
+    <p><%= link_to "Learn more", cuisine_path(cuisine) %></p>
     </div> 
     <% end %> 
 
