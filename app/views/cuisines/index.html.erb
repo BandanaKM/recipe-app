@@ -1,11 +1,9 @@
-<h1>Cuisines#index</h1>
-
 <!doctype html>
 
 <div>
   <ul>
     <% if current_user %>
-      Signed in as <strong> <%= current_user.name %></strong>
+      Signed in as <strong> <%= current_user.first_name %></strong>
   </ul>
   <ul>
     <li><%= link_to "Logout", '/logout' %></a></li>

@@ -1,5 +1,3 @@
-<h1>Cuisines#show</h1>
-
 <div class="header">
   <div class="container">
     <h1></h1>
@@ -8,21 +6,29 @@
 
 <div class="cuisine">
   <div class="container">
-        <h2><%= @cuisine.region %></h2>
+    <h1><%= @cuisine.region %></h2>
   </div>
 </div>
 
-<div class="recipes">
-  <div class="container">
-    <% @recipes.each do |recipe|%> 
-    <%= image_tag recipe.image %>
-    <h2> <%= recipe.name %></p> 
-    <p> <%= recipe.ingredients %></p> 
-    <p> <%= recipe.instructions %></p> 
-    <p> <%= link_to "See Recipe", recipe_path(recipe) %></p>
+  <div class="recipes">
+    <div class="container">
+      <% @recipes.each do |recipe|%> 
+      <%= image_tag recipe.image %>
+      <h2> <%= recipe.name %></p> 
+      <p> <%= recipe.ingredients %></p> 
+      <p> <%= recipe.instructions %></p> 
+      <p> <%= link_to "See Recipe", recipe_path(recipe) %></p>
 
+        <% if current_user && current_user.editor? || current_user.admin? %>
+        <p><%= link_to "Edit Recipe", edit_recipe_path(recipe.id) %></p> 
+        <% end %> 
+
+        <% if current_user && current_user.admin? %>
+        <p><%= link_to "Delete Recipe", recipe, method: :destroy, :class => "btn btn-default" %><p>
+        <% end %>   
+
+      <% end %> 
     </div>    
-    <% end %> 
   </div>
 
   </div>

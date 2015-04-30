@@ -1,6 +1,6 @@
 class CuisinesController < ApplicationController
 
-before_action :require_user [:show]
+# before_action :require_user, only: [:show]
 
    def index
     @cuisines = Cuisine.all

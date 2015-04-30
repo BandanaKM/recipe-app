@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-carlos = User.create(name: 'Carlos', email: 'carlos@email.com', password: 'Carlos1', password_confirmation: 'Carlos1', role: 'editor')
-freida = User.create(name: 'Frieda', email: 'freida@email.com', password: 'Freida1', password_confirmation: 'Freida1', role: 'admin')
-julian = User.create(name: 'Julian', email: 'julian@email.com', password: 'Julian1', password_confirmation: 'Julian1')
+carlos = User.create(first_name: 'Mateo', last_name: 'Lazo', email: 'mateo@email.com', password: 'Mateo1', password_confirmation: 'Mateo1', role: 'editor')
+freida = User.create(first_name: 'Frieda', last_name: 'Gray', email: 'freida@email.com', password: 'Freida1', password_confirmation: 'Freida1', role: 'admin')
+jane = User.create(first_name: 'Julian', last_name: 'Jones', email: 'julian@email.com', password: 'Julian1', password_confirmation: 'Julian1')
 
 c1 = Cuisine.create(region: "Africa", image: "http://placehold.it/300")
   Recipe.create(name: "Egyptian Koshari", image: "http://placehold.it/300", ingredients: "koshari ingredients", instructions: "koshari instructions", cuisine_id: c1.id)

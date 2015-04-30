@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   get '/recipes/:id/edit' => 'recipes#edit', as: :edit_recipe
   patch '/recipes/:id' => 'recipes#update'
+  delete '/recipes/:id' => 'recipes#destroy'
 
-      
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   
